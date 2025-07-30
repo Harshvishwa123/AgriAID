@@ -48,28 +48,76 @@ AgriAid/
 └── datasets/                      # Training datasets
     └── crop_recommendation.csv    # Crop recommendation data
 ```
-### Trained model Results
-- Model Architecture
-<p align="center">
-  <img src="model_architecture.png" alt="Screenshot" width="600" height="600" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
-</p>
-- Training Losses
-<p align="center">
-  <img src="training_losses.png" alt="Screenshot" width="500" height="500" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
-</p>
-- Training Accuracy
-<p align="center">
-  <img src="training_accuracy.png" alt="Screenshot" width="500" height="400" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
-</p>
 
 
-### Run the Application
+## 🧠 Model Training Overview
+
+### 🔬 Plant Disease Detection Model
+- Model: **Convolutional Neural Network (CNN)** using TensorFlow/Keras
+- Dataset: [PlantVillage Dataset on Kaggle](https://www.kaggle.com/datasets/emmarex/plantdisease)
+- Preprocessing: Image resizing (224x224), normalization, label encoding
+- Format: `.h5` model with class labels in `.json`
+- Training time: ~15 mins on GPU
+
+### 🌾 Crop Recommendation Model
+- Model: **Random Forest Classifier** (scikit-learn)
+- Dataset: [Crop Recommendation Dataset](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
+- Features: N, P, K, temperature, humidity, pH, rainfall
+- Output: Recommended crops with suitability scores
+- Format: `.pkl` (Pickled model)
+
+---
+
+## 📊 Trained Model Results
+
+### 🧠 Model Architecture
+<p align="center">
+  <img src="model_architecture.png" alt="Model Architecture" width="600" height="600" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+</p>
+
+---
+
+### 📉 Training Loss Over Epochs
+<p align="center">
+  <img src="training_losses.png" alt="Training Losses" width="500" height="500" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+</p>
+
+---
+
+### 📈 Training Accuracy Over Epochs
+<p align="center">
+  <img src="training_accuracy.png" alt="Training Accuracy" width="500" height="400" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+</p>
+
+---
+
+## 🚀 How to Run This Project
+
+### 🔧 1. Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 🗂 2. Verify Directory Structure
+
+Make sure your folders and files match the project structure listed above (especially the trained models and HTML templates).
+
+### 📁 3. Place the Required Datasets
+
+- Download `PlantVillage` dataset from [Kaggle](https://www.kaggle.com/datasets/emmarex/plantdisease)
+  - Place it at: `C:\\Users\\hvish\\Desktop\\AGRIAID\\PlantVillage`
+- Download `crop_recommendation.csv` from [Kaggle](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
+  - Place it in `datasets/` folder
+
+### ⚙️ 4. Run the Flask App
 
 ```bash
 python app.py
 ```
 
-The application will start at: `http://localhost:5000`
+Access the web app at: [http://localhost:5000](http://localhost:5000)
+
 
 ## 🔧 Configuration Options
 
