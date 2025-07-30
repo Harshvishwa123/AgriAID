@@ -48,90 +48,22 @@ AgriAid/
 └── datasets/                      # Training datasets
     └── crop_recommendation.csv    # Crop recommendation data
 ```
+### Trained model Results
+- Model Architecture
+<p align="center">
+  <img src="model_architecture.png" alt="Screenshot" width="500" height="400" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+</p>
+- Training Losses
+<p align="center">
+  <img src="training_losses.png" alt="Screenshot" width="500" height="400" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+</p>
+- Training Accuracy
+<p align="center">
+  <img src="training_accuracy.png" alt="Screenshot" width="500" height="400" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+</p>
 
-## 🚀 Step-by-Step Implementation
 
-### Step 1: Project Setup
-
-1. **Create project directory:**
-   ```bash
-   mkdir AgriAid
-   cd AgriAid
-   ```
-
-2. **Run the setup script:**
-   ```bash
-   python setup_project.py
-   ```
-
-### Step 2: Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Step 3: Prepare Your Data
-
-#### Disease Detection Dataset
-- Ensure your PlantVillage dataset is at: `C:\Users\hvish\Desktop\AGRIAID\PlantVillage`
-- Update the path in `app.py` if different:
-  ```python
-  dataset_path = r"YOUR_PLANTVILLAGE_PATH"
-  ```
-
-#### Crop Recommendation Dataset
-- Place your `crop_recommendation.csv` in the `datasets/` folder
-- Ensure it has columns: `N`, `P`, `K`, `temperature`, `humidity`, `ph`, `rainfall`, `label`
-
-### Step 4: Train the Disease Detection Model
-
-1. **Run your training script** (the code you provided):
-   ```bash
-   python your_training_script.py
-   ```
-
-2. **Verify model files are created:**
-   - `models/plant_disease_model.h5`
-   - `models/class_labels.json`
-
-### Step 5: Create All Project Files
-
-Create the following files in your project directory:
-
-#### 1. `app.py` (Flask Backend)
-- Copy the Flask backend code provided
-- This handles all API endpoints and ML model integration
-
-#### 2. HTML Templates (in `templates/` folder)
-- `index.html` - Home page with navigation
-- `disease_detection.html` - Image upload and analysis
-- `crop_recommendation.html` - Soil/weather input form
-- `market_prices.html` - Price display with auto-refresh
-
-#### 3. `requirements.txt`
-- Lists all Python dependencies
-
-#### 4. `setup_project.py`
-- Automated setup script for project structure
-
-### Step 6: Configure the Application
-
-1. **Update dataset paths in `app.py`:**
-   ```python
-   # Line ~45: Update PlantVillage path
-   dataset_path = r"C:\Users\hvish\Desktop\AGRIAID\PlantVillage"
-   
-   # Line ~180: Update CSV path if needed
-   if not os.path.exists('datasets/crop_recommendation.csv'):
-   ```
-
-2. **Customize disease treatments** (optional):
-   ```python
-   # In load_disease_treatments() function
-   # Add more disease-treatment mappings
-   ```
-
-### Step 7: Run the Application
+### Run the Application
 
 ```bash
 python app.py
@@ -179,59 +111,7 @@ def get_market_prices():
     return response.json()
 ```
 
-## 🐛 Troubleshooting
 
-### Common Issues
-
-1. **Model not found error:**
-   - Ensure you've trained the disease detection model
-   - Check file paths in `load_models()`
-
-2. **CSV not found error:**
-   - Place `crop_recommendation.csv` in `datasets/` folder
-   - Verify column names match expected format
-
-3. **Image upload fails:**
-   - Check file format (JPG, PNG, JPEG only)
-   - Ensure file size < 16MB
-   - Verify `static/uploads/` directory exists
-
-4. **TensorFlow warnings:**
-   - These are normal and can be ignored
-   - Warnings are suppressed in the code
-
-### Debug Mode
-Enable debug mode for detailed error messages:
-```python
-app.run(debug=True, host='0.0.0.0', port=5000)
-```
-
-## 📱 Browser Compatibility
-
-- **Recommended:** Chrome, Firefox, Safari, Edge
-- **Mobile-responsive:** Works on tablets and phones
-- **JavaScript required:** For interactive features
-
-## 🔒 Security Considerations
-
-### For Production Deployment:
-1. **Change secret key:**
-   ```python
-   app.secret_key = 'your-secure-random-key'
-   ```
-
-2. **Add input validation:**
-   - File type verification
-   - Size limits
-   - Input sanitization
-
-3. **Use HTTPS:**
-   - SSL certificates
-   - Secure file uploads
-
-4. **Database integration:**
-   - Replace mock data with real database
-   - User authentication if needed
 
 ## 📈 Performance Optimization
 
