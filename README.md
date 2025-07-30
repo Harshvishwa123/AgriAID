@@ -1,6 +1,9 @@
 # 🌱 AgriAid - Smart Agriculture Assistant
 
 A comprehensive web-based platform that helps farmers with crop disease detection, crop recommendations, and real-time market prices using AI and machine learning.
+<p align="center">
+  <img src="homepage.png" alt="Screenshot" width="600"/>
+</p>
 
 
 ## 🎯 Features
