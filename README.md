@@ -51,11 +51,11 @@ AgriAid/
 ### Trained model Results
 - Model Architecture
 <p align="center">
-  <img src="model_architecture.png" alt="Screenshot" width="500" height="400" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+  <img src="model_architecture.png" alt="Screenshot" width="600" height="600" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
 </p>
 - Training Losses
 <p align="center">
-  <img src="training_losses.png" alt="Screenshot" width="500" height="400" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+  <img src="training_losses.png" alt="Screenshot" width="500" height="500" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
 </p>
 - Training Accuracy
 <p align="center">
